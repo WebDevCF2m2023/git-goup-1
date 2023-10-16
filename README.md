@@ -141,6 +141,14 @@ git add index.html
 git commit -m "Résolution des conflits"
 ```
 
+Sans conflits, vous pouvez directement ajouter les modifications et commiter :
+
+```bash
+git add .
+
+git commit -m "merge index.html"
+```
+
 Vous pouvez ensuite pousser les modifications sur votre fork :
 
 ```bash
@@ -149,6 +157,6 @@ git push origin mabranche1
 
 ## 11. Mettre à jour la Pull Request
 
-Une fois que vous avez résolu les conflits, vous pouvez mettre à jour votre `Pull Request` en cliquant sur le bouton `Update branch` :
+Une fois que vous avez résolu les conflits, votre `Pull Request` aura été mise à jour automatiquement.
 
-![PR3](
+Vous pouvez ajouter un commentaire pour expliquer les modifications apportées et cliquer sur le formulaire `Leave a comment` :
