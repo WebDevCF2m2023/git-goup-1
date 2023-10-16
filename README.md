@@ -30,6 +30,7 @@ cd git-goup-1
 
 git remote -v
 
+# Affiche :
 origin  git@github.com:VotrePseudoGithub/git-goup-1.git (fetch)
 origin  git@github.com:VotrePseudoGithub/git-goup-1.git (push)
 ```
@@ -62,7 +63,100 @@ C'est également grâce à ce lien que vous pourrez proposer vos modifications a
 Pour travailler sur une fonctionnalité, il faut toujours créer une branche :
 
 ```bash
-git checkout -b ma-branche
+# Créer la branche et se positionner dessus
+git checkout -b mabranche1
+```
+
+C'est un raccourci de la commande :
+
+```bash
+# Créer la branche
+git branch mabranche1
+
+# Se positionner sur la branche
+git switch mabranche1
 ```
 
 C'est sur cette branche que vous allez travailler. Vous pouvez la nommer comme vous voulez. Il est d'usage de nommer la branche en fonction de la fonctionnalité que vous allez développer.
+
+## 6. Faire des modifications
+
+Vous pouvez maintenant faire des modifications sur le projet. Par exemple, ajouter un fichier `index.html` et le commiter :
+
+```bash
+touch index.html
+
+git add index.html
+
+git commit -m "Ajout du fichier index.html"
+```
+
+## 7. Pousser les modifications sur votre fork
+
+Une fois que vous avez terminé de travailler sur votre branche, vous pouvez pousser les modifications sur votre fork :
+
+```bash
+git push origin mabranche1
+```
+
+## 8. Créer une Pull Request
+
+Une fois que vous avez poussé vos modifications sur votre fork, vous pouvez créer une `Pull Request` pour proposer vos modifications au dépôt original :
+
+![PR](https://github.com/mikhawa/git-goup-1/blob/mabranche1/datas/screenshot-github.com-2023.10.16-11_15_02.png?raw=true)
+
+Vous pouvez ajouter un commentaire pour expliquer vos modifications et cliquer sur le bouton `Create pull request` :
+
+![PR2](https://github.com/mikhawa/git-goup-1/blob/mabranche1/datas/screenshot-github.com-2023.10.16-11_18_36.png?raw=true)
+
+## 9. Récupérer les modifications du dépôt original
+
+Une fois que vous avez créé votre `Pull Request`, vous pouvez récupérer les modifications apportées au dépôt original par les autres collaborateurs.
+
+Pour cela, il faut se positionner sur la branche `main` de votre fork et récupérer les modifications du dépôt original :
+
+```bash
+git checkout main
+# ou git switch main
+
+git pull upstream main
+```
+
+Vous pouvez ensuite vous positionner sur votre branche et fusionner la branche `main` avec votre branche :
+
+```bash
+git checkout mabranche1
+# ou git switch mabranche1
+
+git merge main
+```
+
+## 10. Résoudre les conflits
+
+Si vous avez des conflits, vous devez les résoudre en modifiant les fichiers concernés. Vous devez ensuite ajouter les modifications et commiter :
+
+```bash
+git add index.html
+
+git commit -m "Résolution des conflits"
+```
+
+Sans conflits, vous pouvez directement ajouter les modifications et commiter :
+
+```bash
+git add .
+
+git commit -m "merge index.html"
+```
+
+Vous pouvez ensuite pousser les modifications sur votre fork :
+
+```bash
+git push origin mabranche1
+```
+
+## 11. Mettre à jour la Pull Request
+
+Une fois que vous avez résolu les conflits, votre `Pull Request` aura été mise à jour automatiquement.
+
+Vous pouvez ajouter un commentaire pour expliquer les modifications apportées et cliquer sur le formulaire `Leave a comment` :
