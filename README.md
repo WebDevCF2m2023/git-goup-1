@@ -30,6 +30,7 @@ cd git-goup-1
 
 git remote -v
 
+# Affiche :
 origin  git@github.com:VotrePseudoGithub/git-goup-1.git (fetch)
 origin  git@github.com:VotrePseudoGithub/git-goup-1.git (push)
 ```
@@ -62,7 +63,17 @@ C'est également grâce à ce lien que vous pourrez proposer vos modifications a
 Pour travailler sur une fonctionnalité, il faut toujours créer une branche :
 
 ```bash
-git checkout -b ma-branche
+git checkout -b mabranche1
+```
+
+C'est un raccourci de la commande :
+
+```bash
+# Créer la branche
+git branch mabranche1
+
+# Se positionner sur la branche
+git switch mabranche1
 ```
 
 C'est sur cette branche que vous allez travailler. Vous pouvez la nommer comme vous voulez. Il est d'usage de nommer la branche en fonction de la fonctionnalité que vous allez développer.
