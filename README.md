@@ -131,6 +131,12 @@ git checkout mabranche1
 git merge main
 ```
 
+Si vous n'aviez pas de conflits, vous pouvez pousser les modifications sur votre fork :
+
+```bash
+git push origin mabranche1
+```
+
 ## 10. Résoudre les conflits
 
 Si vous avez des conflits, vous devez les résoudre en modifiant les fichiers concernés. Vous devez ensuite ajouter les modifications et commiter :
@@ -139,14 +145,6 @@ Si vous avez des conflits, vous devez les résoudre en modifiant les fichiers co
 git add index.html
 
 git commit -m "Résolution des conflits"
-```
-
-Sans conflits, vous pouvez directement ajouter les modifications et commiter :
-
-```bash
-git add .
-
-git commit -m "merge index.html"
 ```
 
 Vous pouvez ensuite pousser les modifications sur votre fork :
@@ -159,4 +157,44 @@ git push origin mabranche1
 
 Une fois que vous avez résolu les conflits, votre `Pull Request` aura été mise à jour automatiquement.
 
-Vous pouvez ajouter un commentaire pour expliquer les modifications apportées et cliquer sur le formulaire `Leave a comment` :
+Vous pouvez ajouter un commentaire pour expliquer les modifications apportées et cliquer sur le formulaire `Leave a comment`.
+
+Le propriétaire du dépôt original pourra ensuite fusionner votre `Pull Request` avec la branche `main` du dépôt original.
+
+Si vous avez des modifications à apporter, vous pouvez les faire sur votre branche et pousser les modifications sur votre fork. La `Pull Request` sera mise à jour automatiquement.
+
+## 12. Continuer à travailler sur une autre branche
+
+Une fois que vous avez terminé de travailler sur votre branche, vous pouvez retourner sur la branche `main` de votre fork et récupérer les modifications du dépôt original :
+
+```bash
+git checkout main
+# ou git switch main
+
+git pull upstream main
+```
+
+Vous pouvez ensuite créer une nouvelle branche pour travailler sur une autre fonctionnalité :
+
+```bash
+git checkout -b mabranche2
+# ou git switch -b mabranche2
+```
+
+## 13. Supprimer une branche
+
+Vous pouvez supprimer une branche une fois que vous avez fusionné la branche avec la branche `main` du dépôt original :
+
+```bash
+git branch -d mabranche1
+```
+
+Vous pouvez également supprimer la branche sur votre fork :
+
+```bash
+git push origin --delete mabranche1
+```
+
+ou depuis Github :
+
+
