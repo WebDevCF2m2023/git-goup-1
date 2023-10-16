@@ -197,4 +197,33 @@ git push origin --delete mabranche1
 
 ou depuis Github :
 
+![Delete branch](https://github.com/WebDevCF2m2023/git-goup-1/blob/main/datas/screenshot-github.com-2023.10.16-11_38_43.png?raw=true)
+
+### Important
+
+Je vous conseille de garder vos branches sur github ET en local, surtout si celles-ci **ne sont pas intégrées au travail final !** 
+
+En effet, ce sont vos preuves de travail que l'on ne peut pas vous voler, et qui vous permettent de prouver que vous avez travaillé sur le projet !
+
+## 14. Récupérer les modifications du dépôt original
+
+**A chaque fois que vous travaillerez sur le projet**, vous devrez récupérer les modifications apportées au dépôt original par les autres collaborateurs.
+
+Une fois que vous avez fusionné votre branche avec la branche `main` du dépôt original, vous pouvez récupérer les modifications apportées au dépôt original par les autres collaborateurs.
+
+Pour cela, il faut se positionner sur la branche `main` de votre fork et récupérer les modifications du dépôt original :
+
+```bash
+git checkout main
+# ou git switch main
+
+git pull upstream main
+```
+
+Puis mettez votre branche `main` à jour sur votre `fork` :
+
+```bash
+git push origin main
+```
+
 
